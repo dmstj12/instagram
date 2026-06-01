@@ -27,9 +27,6 @@ public class SignUpController {
         SignUp nickName_existing = signUpRepository.findByNickName(User.getNickName());
         SignUp phoneNumber_existing =  signUpRepository.findByPhoneNumber(User.getPhoneNumber());
 
-        System.out.println("닉네임 조회 결과 = " + nickName_existing);
-        System.out.println("전화번호 조회 결과 = " + phoneNumber_existing);
-
         if (result.hasErrors()) {
             return "redirect:/signup";
         }
