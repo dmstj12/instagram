@@ -6,6 +6,7 @@ public interface SignUpRepository extends JpaRepository<SignUp, Long> {
 
     SignUp findByNickName(String nickName);
     SignUp findByPhoneNumber(String phoneNumber);
+    SignUp findBypassword(String password);
 }
 
 
