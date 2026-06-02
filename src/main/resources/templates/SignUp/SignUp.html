@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project</title>
+  <link rel="stylesheet" href="/SignUp/SignUp.css">
+</head>
+<body>
+<div class = 'container'>
+  <h2>회원가입</h2>
+  <form id="signup_form" autocomplete="off" action = "/signup" method = "post">
+
+    <fieldset class="input_list" id="value1">
+      <legend>이름</legend>
+      <input type="text" id="inputNm" autocomplete="off" name = "realName" required>
+    </fieldset>
+
+    <fieldset class="input_list" id ="value2">
+      <legend>아이디</legend>
+      <input type="text" id="inputId" autocomplete="off" name = "nickName" required>
+    </fieldset>
+
+    <fieldset class="input_list hidden" id="value3">
+      <legend>비밀번호</legend>
+      <input type="password" id="inputPw" name = "password" required>
+    </fieldset>
+
+    <fieldset class="input_list hidden" id="value4">
+      <legend>비밀번호 확인</legend>
+      <input type="password" id="inputPw_confirm" name = "password_check" required>
+    </fieldset>
+
+    <fieldset class="input_list hidden" id="value5">
+      <legend>전화번호</legend>
+      <input type="tel" id="inputPn" name = "phoneNumber" required>
+    </fieldset>
+
+    <button>회원가입</button>
+  </form>
+
+  <a href="../Login.html" class="login">이미 계정이 있나요?</a>
+</div>
+<script src="/SignUp/SignUp.js"></script>
+</body>
+</html>

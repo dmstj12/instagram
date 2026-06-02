@@ -23,18 +23,18 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String login(@RequestParam String nickName, @RequestParam String password, HttpSession session) {
-        SignUp member = signUpRepository.findByNickName(nickName);
+    public String login(@RequestParam String nickName, @RequestParam String password, HttpSession session) { // /login 페이지에서 입력값 아이디와 비밀번호를 받아옴
+        SignUp member = signUpRepository.findByNickName(nickName); // db에서 아이디를 찾아옴
 
-        if (nickName.isBlank() || password.isBlank()) {
+        if (nickName.isBlank() || password.isBlank()) { // 만약 받아온 값에 공백이 존재하면 에러
             return "redirect:/login?error=null";
         } else if (member == null) {
-            return "redirect:/login?error=notfound";
+            return "redirect:/login?error=notfound"; // 만약 존재하지 않는다면 에러
         } else if (member.getPassword().equals(password)){
-            session.setAttribute("user", member);
+            session.setAttribute("user", member); // 로그인에 성공한다면 user라는 권한 넘겨주고 /home으로 이동
             return "redirect:/home";
         } else {
-            return "redirect:/login?error=notsame";
+            return "redirect:/login?error=notsame"; // 다 아니면 에러
         }
     }
 }

@@ -17,18 +17,18 @@ public class FindIdController {
         this.signUpRepository = signUpRepository;
     }
 
-    @GetMapping("/find")
+    @GetMapping("/find_id")
     public String findId() {
-        return "Find";
+        return "Find_ID";
     }
 
-    @PostMapping("/find")
+    @PostMapping("/find_id")
     public String FindId(@RequestParam String phoneNumber, Model model) {
         SignUp member = signUpRepository.findByPhoneNumber(phoneNumber);
 
         if (member.getPhoneNumber().equals(phoneNumber)) {
             model.addAttribute("userId", member.getNickName());
         }
-        return "Find";
+        return "Find_ID";
     }
 }
