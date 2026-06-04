@@ -24,7 +24,7 @@ public class FindPwdController {
 
     @PostMapping("/find_password")
     public String findPwd(@RequestParam int id, @RequestParam String phoneNumber, Model model) {
-        SignUp member = signUpRepository.findByPassword(phoneNumber);
+        SignUp member = signUpRepository.findByPhoneNumber(phoneNumber);
 
         if (member.getPhoneNumber().equals(phoneNumber) && member.getId() == id) {
             model.addAttribute("FindByPwd", member.getPassword());

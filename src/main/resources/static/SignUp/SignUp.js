@@ -44,12 +44,11 @@ inputId.addEventListener('keyup', function(event) {
         }, 50);
     }
 
-    // 아이디 지우면 이름으로 커서만 이동 (아이디는 처음부터 켜져있으니 안숨김)
-    if (event.key === 'Backspace' && inputId.value === "") {
-        setTimeout(function() {
-            inputNm.focus();
-        }, 10);
-    }
+    // if (event.key === 'Backspace' && inputId.value === "") {
+    //     setTimeout(function() {
+    //         inputNm.focus();
+    //     }, 10);
+    // }
 });
 
 inputPw.addEventListener('keyup', function(event) {
@@ -64,12 +63,13 @@ inputPw.addEventListener('keyup', function(event) {
             container.scrollTop = container.scrollHeight;
         }, 50);
     }
-    if (event.key === 'Backspace' && inputPw.value === "") {
-        value3.classList.add('hidden');
-        setTimeout(function() {
-            inputId.focus();
-        }, 10);
-    }
+
+    // if (event.key === 'Backspace' && inputPw.value === "") {
+    //     value3.classList.add('hidden');
+    //     setTimeout(function() {
+    //         inputId.focus();
+    //     }, 10);
+    // }
 });
 
 inputPw_confirm.addEventListener('keyup', function(event) {
@@ -84,18 +84,52 @@ inputPw_confirm.addEventListener('keyup', function(event) {
             container.scrollTop = container.scrollHeight;
         }, 50);
     }
-    if (event.key === 'Backspace' && inputPw_confirm.value === "") {
-        value4.classList.add('hidden');
-        setTimeout(function() {
-            inputPw.focus();
-        }, 10);
-    }
+
+    // if (event.key === 'Backspace' && inputPw_confirm.value === "") {
+    //     value4.classList.add('hidden');
+    //     setTimeout(function() {
+    //         inputPw.focus();
+    //     }, 10);
+    // }
 });
-inputPn.addEventListener('keyup', function(event) {
-    if (event.key === 'Backspace' && inputPn.value === "") {
-        value5.classList.add('hidden');
-        setTimeout(function() {
-            inputPw_confirm.focus();
-        }, 10);
-    }
+
+// inputPn.addEventListener('keyup', function(event) {
+//     if (event.key === 'Backspace' && inputPn.value === "") {
+//         value5.classList.add('hidden');
+//         setTimeout(function() {
+//             inputPw_confirm.focus();
+//         }, 10);
+//     }
+// });
+
+
+
+const hidePw = document.getElementById('hidePw');
+const seePw = document.getElementById('seePw');
+const hidePw_confirm = document.getElementById('hidePw_confirm');
+const seePw_confirm = document.getElementById('seePw_confirm');
+
+hidePw.addEventListener('click', function() {
+    inputPw.type = 'text';
+    hidePw.classList.add('hidden');
+    seePw.classList.remove('hidden');
+});
+
+seePw.addEventListener('click', function() {
+    inputPw.type = 'password';
+    seePw.classList.add('hidden');
+    hidePw.classList.remove('hidden');
+});
+
+
+hidePw_confirm.addEventListener('click', function() {
+    inputPw_confirm.type = 'text';
+    hidePw_confirm.classList.add('hidden');
+    seePw_confirm.classList.remove('hidden');
+});
+
+seePw_confirm.addEventListener('click', function() {
+    inputPw_confirm.type = 'password';
+    seePw_confirm.classList.add('hidden');
+    hidePw_confirm.classList.remove('hidden');
 });

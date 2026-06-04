@@ -23,12 +23,20 @@
 
     <fieldset class="input_list hidden" id="value3">
       <legend>비밀번호</legend>
-      <input type="password" id="inputPw" name = "password" required>
+      <div class="pw_container">
+        <input type="password" id="inputPw" name = "password" required>
+        <img src="/image/hidden.png" id="hidePw" class="eye_icon">
+        <img src="/image/eye.png" id="seePw" class="eye_icon hidden">
+      </div>
     </fieldset>
 
     <fieldset class="input_list hidden" id="value4">
       <legend>비밀번호 확인</legend>
-      <input type="password" id="inputPw_confirm" name = "password_check" required>
+      <div class="pw_container">
+        <input type="password" id="inputPw_confirm" name = "passwordCheck" required>
+        <img src="/image/hidden.png" id="hidePw_confirm" class="eye_icon">
+        <img src="/image/eye.png" id="seePw_confirm" class="eye_icon hidden">
+      </div>
     </fieldset>
 
     <fieldset class="input_list hidden" id="value5">
@@ -36,10 +44,10 @@
       <input type="tel" id="inputPn" name = "phoneNumber" required>
     </fieldset>
 
-    <button>회원가입</button>
+    <button type = "submit">회원가입</button>
   </form>
 
-  <a href="../Login.html" class="login">이미 계정이 있나요?</a>
+  <a href="Login.html" class="login">이미 계정이 있나요?</a>
 </div>
 <script src="/SignUp/SignUp.js"></script>
 </body>
