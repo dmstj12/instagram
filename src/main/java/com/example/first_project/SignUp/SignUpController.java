@@ -1,21 +1,19 @@
 package com.example.first_project.SignUp;
 
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
+@RequiredArgsConstructor
 public class SignUpController {
 
     private final SignUpService signUpService; // 서비스 가져옴 final 왜 씀?
     private final SignUpRepository signUpRepository; // 저장소 가져옴 final 왜 씀?
 
-    public SignUpController(SignUpService signUpService, SignUpRepository signUpRepository) { // 직원에서 서비스 기능이랑 저장소 다 넘김
-        this.signUpService = signUpService;
-        this.signUpRepository = signUpRepository;
-    }
 
     @GetMapping("/signup")
     public String signup() {
